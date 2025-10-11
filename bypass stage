@@ -1,0 +1,25 @@
+lol = 1 -- global
+
+local player = game.Players.LocalPlayer
+local targetOrientation = CFrame.new(
+    86.072998, 105.031593, -491.421265,
+    0.803467512, -0.15452981, -0.57494396,
+    0, 0.965726495, -0.259561867,
+    0.595348656, 0.208549529, 0.775929809
+)
+
+local teleportInterval = 0.05 -- fast but safe
+
+local function startTeleporting(character)
+    character:WaitForChild("HumanoidRootPart")
+    while lol == 1 do
+        character:SetPrimaryPartCFrame(targetOrientation)
+        task.wait(teleportInterval)
+    end
+    print("Teleporting stopped")
+end
+
+player.CharacterAdded:Connect(function(character)
+    if lol == 1 then
+        startTeleporting(character)
+    end
