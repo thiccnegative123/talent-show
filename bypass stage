@@ -12,17 +12,25 @@ local teleportInterval = 0.05 -- fast but safe
 
 local function startTeleporting(character)
     character:WaitForChild("HumanoidRootPart")
-    while lol == 1 do
-        character:SetPrimaryPartCFrame(targetOrientation)
-        task.wait(teleportInterval)
-    end
-    print("Teleporting stopped")
+    
+    spawn(function() -- run in a new thread
+        while true do
+            if lol == 0 then
+                print("Teleporting stopped")
+                break
+            end
+
+            if character and character.PrimaryPart then
+                character:SetPrimaryPartCFrame(targetOrientation)
+            end
+
+            task.wait(teleportInterval)
+        end
+    end)
 end
 
 player.CharacterAdded:Connect(function(character)
-    if lol == 1 then
-        startTeleporting(character)
-    end
+    startTeleporting(character)
 end)
 
 if player.Character then
