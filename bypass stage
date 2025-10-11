@@ -2,7 +2,7 @@ lol = 1 -- global
 
 local player = game.Players.LocalPlayer
 local targetOrientation = CFrame.new(
-    86.072998, 105.031593, -491.421265,
+    86.072998, 100.031593, -491.421265,
     0.803467512, -0.15452981, -0.57494396,
     0, 0.965726495, -0.259561867,
     0.595348656, 0.208549529, 0.775929809
@@ -23,3 +23,8 @@ player.CharacterAdded:Connect(function(character)
     if lol == 1 then
         startTeleporting(character)
     end
+end)
+
+if player.Character then
+    startTeleporting(player.Character)
+end
