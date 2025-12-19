@@ -1,0 +1,79 @@
+local gui = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+gui.ResetOnSpawn = false
+local frame = Instance.new("Frame", gui)
+local offbutton = Instance.new("TextButton", gui)
+local button = Instance.new("TextButton", frame)
+local button1 = Instance.new("TextButton", frame)
+local button2 = Instance.new("TextButton", frame)
+local button3 = Instance.new("TextButton", frame)
+
+
+frame.Size = UDim2.new(0.69,0,0.15,0)
+frame.Position = UDim2.new(0,192,0,-1)
+frame.Active = true
+frame.Draggable = true
+frame.BackgroundColor3 = Color3.fromRGB(85,170,255)
+
+offbutton.Size = UDim2.new(0.05,0,0.1,0)
+offbutton.Position = UDim2.new(0,909,0,-63)
+offbutton.Active = true
+offbutton.Draggable = true
+offbutton.BackgroundColor3 = Color3.fromRGB(255,255,255)
+offbutton.Text = "on/off"
+
+
+button.Size = UDim2.new(0.15,0,0.5,0)
+button.Position = UDim2.new(0,110,0,33)
+button.Active = true
+button.Draggable = false
+button.BackgroundColor3 = Color3.fromRGB(170,255,255)
+button.Text = "Bypass stage"
+
+button1.Size = UDim2.new(0.15,0,0.5,0)
+button1.Position = UDim2.new(0,428,0,33)
+button1.Active = true
+button1.Draggable = false
+button1.BackgroundColor3 = Color3.fromRGB(170,255,255)
+button1.Text = " stop bypass stage"
+
+button2.Size = UDim2.new(0.15,0,0.5,0)
+button2.Position = UDim2.new(0,736,0,33)
+button2.Active = true
+button2.Draggable = false
+button2.BackgroundColor3 = Color3.fromRGB(170,255,255)
+button2.Text = "GET ALL THE REPS"
+
+button3.Size = UDim2.new(0.15,0,0.5,0)
+button3.Position = UDim2.new(0,1058,0,33)
+button3.Active = true
+button3.Draggable = false
+button3.BackgroundColor3 = Color3.fromRGB(170,255,255)
+button3.Text = "CHAT BYPASSER"
+
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/thiccnegative123/talent-show/refs/heads/main/bypass%20stage"))();
+end)
+
+
+button1.MouseButton1Click:Connect(function()
+lol = 0
+end)
+
+
+button2.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/thiccnegative123/talent-show/refs/heads/main/talent%20show%20free%20reps"))();
+end)
+
+
+button3.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/mert134/358b6c0b43e67f75dd4c8f1fc17af692/raw/eeeb6479868b3aaee57d8b60559e6d1aae13d17d/gistfile1.txt"))()
+end)
+
+
+offbutton.MouseButton1Click:Connect(function()
+if frame.Visible == true then
+frame.Visible = false
+elseif frame.Visible == false then
+frame.Visible = true
+end
+end)
